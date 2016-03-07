@@ -1,11 +1,9 @@
 # rscss Cheatsheet
 > Styling CSS without losing your sanity
 
-A single page explanation for RSCSS. All credits to Rico Sta. Cruz:
+A single page explanation for RSCSS. 
 
-+ [ricostacruz.com](http://ricostacruz.com/)
-+ Github [@rstacruz](https://github.com/rstacruz)
-+ Twitter [@rstacruz](https://twitter.com/rstacruz)
+All credits to Rico Sta. Cruz: [ricostacruz.com](http://ricostacruz.com/) | Github: [@rstacruz](https://github.com/rstacruz) | Twitter: [@rstacruz](https://twitter.com/rstacruz)
 
 ## 0. Summary
 
@@ -14,19 +12,19 @@ A single page explanation for RSCSS. All credits to Rico Sta. Cruz:
 + Name variants with a dash prefix (.shop-banner.-with-icon)
 + Components can nest
 + Remember you can extend to make things simple
-
+---
 ## 1 Components
 ### 1.1 About components
 Think in components. Consider each piece of your UI as an individual "component".
 
 #### Naming components
-Components will be named with at least two words, separated by a dash. Examples of components:
-+ A like button (.like-button)
-+ A search form (.search-form)
-+ A news article card (.article-card)
+Components will be named with **at least two words**, separated by a **dash**. Examples of components:
++ A like button (`.like-button`)
++ A search form (`.search-form`)
++ A news article card (`.article-card`)
 
 ### 1.2 Elements
-Elements are things inside your component.
+Elements are _things_ inside your component.
 
 #### Naming elements
 Each component may have elements. They should have classes that are only one word.
@@ -37,7 +35,7 @@ Each component may have elements. They should have classes that are only one wor
     }
 
 #### Element selectors
-Prefer to use the > child selector whenever possible. This prevents bleeding through nested components, and performs better than descendant selectors.
+Prefer to use the `>` child selector whenever possible. This prevents bleeding through nested components, and performs better than descendant selectors.
 
     .article-card {
         .title     { /* okay */ }
@@ -54,13 +52,13 @@ For those that need two or more words, concatenate them without dashes or unders
     }
 
 #### Avoid tag selectors
-Use classnames whenever possible. Tag selectors are fine, but they may come at a small performance penalty and may not be as descriptive.
+Use classnames.
 
 ### 1.3 Variants
 Components may have variants. Elements may have variants, too.
 
 #### Naming variants
-Classnames for variants will be prefixed by a dash (-).
+Classnames for variants will be prefixed by a dash (`-`).
 
     .like-button {
         &.-wide { /* ... */ }
@@ -109,8 +107,8 @@ Instead, prefer to add a variant to the nested component and apply it from the c
         </div>
         ...
     </div>
-
-Css:
+    
+    ...
 
     .vote-box {
         &.-highlight > .up { /* ... */ }
@@ -124,14 +122,14 @@ Sometimes, when nesting components, your markup can get dirty:
         <button class='search-button -red -large'></button>
     </div>
 
-You can simplify this by using your CSS preprocessor's @extend mechanism:
+You can simplify this by using your CSS preprocessor's `@extend` mechanism:
 
     <div class='search-form'>
         <input class='input' type='text'>
         <button class='submit'></button>
     </div>
 
- Css:
+    ...
 
     .search-form {
         > .submit {
@@ -148,7 +146,7 @@ Components should be made in a way that they're reusable in different contexts. 
 + Positioning (position, top, left, right, bottom)
 + Floats (float, clear)
 + Margins (margin)
-+ Dimensions (width, height) *
++ Dimensions (width, height)
 
 #### Fixed dimensions
 Exception to these would be elements that have fixed width/heights, such as avatars and logos.
@@ -160,7 +158,6 @@ If you need to define these, try to define them in whatever context they will be
         & {
             @include clearfix;
         }
-
         > .article-card {
             width: 33.3%;
             float: left;
@@ -185,6 +182,7 @@ Prefix classnames with an underscore. This will make it easy to differentiate th
 #### Organizing helpers
 Place all helpers in one file called helpers. While you can separate them into multiple files, it's very preferrable to keep your number of helpers to a minimum.
 
+---
 ## 2 CSS structure
 ### 2.1 One component per file
 For each component, place them in their own file.
@@ -201,9 +199,7 @@ For each component, place them in their own file.
     }
 
 ### 2.2 Use glob matching
-In sass-rails and stylus, this makes including all of them easy:
-
-    @import 'components/*';
+In sass-rails and stylus, this makes including all of them easy: `@import 'components/*';`
 
 ### 2.3 Avoid over-nesting
 Use no more than 1 level of nesting. It's easy to get lost with too much nesting.
@@ -224,7 +220,7 @@ Use no more than 1 level of nesting. It's easy to get lost with too much nesting
         > .description { /* ... */ }
         > .description > .icon { /* ... */ }
     }
-
+---
 ## 3 Notes
 ### 3.1 Pitfalls
 
@@ -242,7 +238,7 @@ Be careful about nested components with elements sharing the same name as elemen
         <p class='count'>3 votes</p>
     </article>
 
-css:
+    ...
 
     .article-link {
         > .title { /* ... */ }
