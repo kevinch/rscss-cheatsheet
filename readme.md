@@ -1,8 +1,6 @@
 # rscss Cheatsheet
 > Styling CSS without losing your sanity
 
-A single page explanation for RSCSS.
-
 All credits to Rico Sta. Cruz: [ricostacruz.com](http://ricostacruz.com/) | Github: [@rstacruz](https://github.com/rstacruz) | Twitter: [@rstacruz](https://twitter.com/rstacruz)
 
 ## 0. Summary
