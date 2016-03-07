@@ -1,7 +1,7 @@
 # rscss Cheatsheet
 > Styling CSS without losing your sanity
 
-A single page explanation for RSCSS. 
+A single page explanation for RSCSS.
 
 All credits to Rico Sta. Cruz: [ricostacruz.com](http://ricostacruz.com/) | Github: [@rstacruz](https://github.com/rstacruz) | Twitter: [@rstacruz](https://twitter.com/rstacruz)
 
@@ -12,7 +12,7 @@ All credits to Rico Sta. Cruz: [ricostacruz.com](http://ricostacruz.com/) | Gith
 + Name variants with a dash prefix (.shop-banner.-with-icon)
 + Components can nest
 + Remember you can extend to make things simple
----
+
 ## 1 Components
 ### 1.1 About components
 Think in components. Consider each piece of your UI as an individual "component".
@@ -107,7 +107,7 @@ Instead, prefer to add a variant to the nested component and apply it from the c
         </div>
         ...
     </div>
-    
+
     ...
 
     .vote-box {
@@ -182,7 +182,6 @@ Prefix classnames with an underscore. This will make it easy to differentiate th
 #### Organizing helpers
 Place all helpers in one file called helpers. While you can separate them into multiple files, it's very preferrable to keep your number of helpers to a minimum.
 
----
 ## 2 CSS structure
 ### 2.1 One component per file
 For each component, place them in their own file.
@@ -220,7 +219,7 @@ Use no more than 1 level of nesting. It's easy to get lost with too much nesting
         > .description { /* ... */ }
         > .description > .icon { /* ... */ }
     }
----
+
 ## 3 Notes
 ### 3.1 Pitfalls
 
